@@ -45,7 +45,7 @@ class Editar extends Component {
                     <Artista>Chris Brown</Artista>
                 </Musica>
                 <BotaoEditar
-                width="10%"
+                width="11%"
                 height="5%"
                 >Editar</BotaoEditar>
             </Body>
