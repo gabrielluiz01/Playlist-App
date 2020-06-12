@@ -1,13 +1,28 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header{
+  width: 100%;
+  height: 7rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #9c9c9c;
+}
+
+.button-add-playlist{
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: green;
+  color: #FFF;
+  font-size: .9rem;
+  font-weight: bold;
+  cursor: pointer;
 }
