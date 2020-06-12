@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -14,56 +14,112 @@ const Container = styled.div`
 
 const ModelAddMusic = styled.div`
   width: 400px;
-  height: 70vh;
+  height: 85vh;
   border-radius: 5px;
   background: #fff;
 `;
 
 const FormAddMusic = styled.form`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding:1rem 0;
 `;
 
-const TitleMusic = styled.input`
-
+const ContainerInput = styled.label`
+  width: 80%;
+  font-family: sans-serif;
+  margin: .5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 `;
 
-const ArtistMusic = styled.input`
-
+const Input = styled.input`
+width: 100%;
+  margin: .5rem 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 2.5rem;
+  padding: .2rem .5rem;
 `;
 
-const GenreMusic = styled.input`
-
+const Button = styled.button`
+  width: 80%;
+  margin: .5rem 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 2.5rem;
+  padding: .2rem .5rem;
 `;
 
-const LinkMusic = styled.input`
 
-`;
+class AddNewMusic extends Component{
+  state = {
+    music: [
+      {
+      title: '',
+      artist: '',
+      music: '',
+      link: '',
+      }
+    ],
+  }
 
-function Paylists() {
-  return(
-  <Container>
-    <ModelAddMusic>
-      <FormAddMusic>
-        <TitleMusic 
-          placeholder="Titulo da Música"
-          required
-          type="text" />
-        <ArtistMusic
-          placeholder="Nome do artista"
-          required
-          type="text" />
-        <GenreMusic
-          placeholder="Nome da música"
-          required
-          type="text" />
-        <LinkMusic
-          placeholder="Link da música"
-          required
-          type="text" />
-      </FormAddMusic>
-    </ModelAddMusic>
-  </Container>
-  );
+  handleChange = () => {
+
+  }
+
+  render() {
+
+    return(
+    <Container>
+      <ModelAddMusic>
+        <FormAddMusic>
+          <ContainerInput>
+            <h2>Titulo</h2>
+            <Input
+              onChange={this.handleChange}
+              value={this.state.title}
+              placeholder="Titulo"
+              required
+              type="text" />
+          </ContainerInput>
+          <ContainerInput>
+            <h2>artista</h2>
+            <Input
+              onChange={this.handleChange}
+              value={this.state.artist}
+              placeholder="Nome do artista"
+              required
+              type="text" />
+          </ContainerInput>
+          <ContainerInput>
+            <h2>Nome da música</h2>
+            <Input
+              onChange={this.handleChange}
+              value={this.state.music}
+              placeholder="Nome da música"
+              required
+              type="text" />
+          </ContainerInput>
+          <ContainerInput>
+            <h2>Link para ouvir a música</h2>
+            <Input
+              onChange={this.handleChange}
+              value={this.state.link}
+              placeholder="Link da música"
+              required
+              type="text" />
+          </ContainerInput>
+          <Button type="submit">Enviar</Button>
+          <Button>Cancelar</Button>
+        </FormAddMusic>
+      </ModelAddMusic>
+    </Container>
+    );
+  }
 }
 
-export default Paylists;
+export default AddNewMusic;
